@@ -1,0 +1,77 @@
+\documentclass[10pt]{report}
+\usepackage{graphicx}
+\usepackage[%
+    left=0.50in,%
+    right=0.50in,%
+    top=1.0in,%
+    bottom=1.0in,%
+    paperheight=11in,%
+    paperwidth=8.5in%
+]{geometry}%
+
+\usepackage{tikz}
+%
+\usetikzlibrary{calc}
+
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+\usepackage{fancyhdr}
+
+\usepackage{tocloft}
+
+\usepackage{ptext}
+
+\usepackage{sectsty}
+
+\usepackage{xepersian}
+
+\renewcommand{\cftchapfont}{\fontsize{14pt}{18pt}\selectfont}
+\renewcommand{\cftsecfont}{\fontsize{14pt}{18pt}\selectfont}
+\renewcommand{\cftsubsecfont}{\fontsize{12pt}{18pt}\selectfont}
+\renewcommand{\cfttoctitlefont}{\center\fontsize{16pt}{30pt}\selectfont\bfseries} 
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+\sectionfont{\fontsize{16}{15}\headerText}
+\subsectionfont{\fontsize{14}{15}\headerText}
+
+\SepMark{-}
+\makeatletter
+
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname-\quad}
+
+\renewcommand{\cftsecaftersnum}{\@SepMark}%
+\renewcommand{\cftsubsecaftersnum}{\@SepMark}%
+\renewcommand{\cftsubsubsecaftersnum}{\@SepMark}%
+
+%%%%%% 
+
+\makeatother
+
+\graphicspath{ {./images/} }
+
+\settextfont{B Nazanin}
+\setlatintextfont{Times New Roman}
+\defpersianfont\nastaliq[Scale=5]{IranNastaliq}
+\defpersianfont\headerText[Scale= 1]{B Titr Bold.ttf}
+\defpersianfont\mainText[Scale=1.4]{B Nazanin}
+
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+   	\input{title}
+   	\newpage
+   	\input{besmellah}
+   	\newpage
+   	\input{abstract}
+   	%
+   	\newpage
+   	\renewcommand{\baselinestretch}{2}\normalsize
+   	\tableofcontents
+   	%
+   	\newpage
+   	\input{maintext}
+	
+ 
+\end{document}
